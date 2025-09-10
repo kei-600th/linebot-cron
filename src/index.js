@@ -51,7 +51,7 @@ export default {
 
   async scheduled(event, env, ctx) {
     // 定期実行時刻を設定（0:00 JST）
-    const SCHEDULED_HOUR = 0;
+    const SCHEDULED_HOUR = 23;
     const SCHEDULED_MINUTE = 0;
     
     // 現在時刻（JST）を取得
@@ -69,7 +69,7 @@ export default {
       console.log("Sending scheduled LINE message...");
       
       try {
-        await sendLineMessage(env.LINE_CHANNEL_ACCESS_TOKEN, env.LINE_TO_ID, "お薬はちゃんと飲みましたか？");
+        await sendLineMessage(env.LINE_CHANNEL_ACCESS_TOKEN, env.LINE_TO_ID, "お薬の時間だお(＾ω＾ ）");
         console.log("Scheduled message sent successfully");
       } catch (error) {
         console.error("Failed to send scheduled message:", error);
